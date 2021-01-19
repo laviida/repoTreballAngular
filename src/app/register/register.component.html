@@ -1,0 +1,38 @@
+<div class="form">
+  <div class="tab-content">
+    <div id="signup">
+      <h1>Sign Up for Free</h1>
+
+      <form id="registerForm">
+        <div class="top-row">
+          <div class="field-wrap">
+            <label> First Name<span class="req">*</span> </label>
+            <input name="first_name" type="text" required autocomplete="off" />
+          </div>
+
+          <div class="field-wrap">
+            <label> Last Name<span class="req">*</span> </label>
+            <input name="last_name" type="text" required autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="field-wrap">
+          <label> Email Address<span class="req">*</span> </label>
+          <input name="email" type="email" required autocomplete="off" />
+        </div>
+
+        <div class="field-wrap">
+          <label> Set A Password<span class="req">*</span> </label>
+          <input name="password" type="password" required autocomplete="off" />
+        </div>
+
+        <div class="field-error"></div>
+        <button type="submit" (click)="onClick()" class="button button-block">
+          Sign Up
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- tab-content -->
+</div>
+<!-- /form -->
