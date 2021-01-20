@@ -1,0 +1,19 @@
+<div class="news">
+  <span>News</span>
+  <ul>
+    <li *ngFor="let new of news;">
+      <a style="width: 80%;
+                margin: 5px auto;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: #fff;
+                text-decoration: none;
+                font: 15px Raleway, Arial, sans-serif;
+                vertical-align: -webkit-baseline-middle;
+                vertical-align: -moz-middle-with-baseline;
+                -webkit-font-smoothing: antialiased;
+                -webkit-user-select: none;" data-id="{{new.NewsID}}">{{new.Title}}</a>
+    </li>
+  </ul>
+</div>
