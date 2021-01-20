@@ -9,7 +9,6 @@ import { RegisterComponent } from './screens/register/register.component';
 import { HomeComponent } from './screens/home/home.component';
 import { NavigationBarComponent } from './widgets/navigation-bar/navigation-bar.component';
 import { NewsBarComponent } from './widgets/news-bar/news-bar.component';
-import { CountdownComponent } from './widgets/countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { CountdownComponent } from './widgets/countdown/countdown.component';
     HomeComponent,
     NavigationBarComponent,
     NewsBarComponent,
-    CountdownComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
