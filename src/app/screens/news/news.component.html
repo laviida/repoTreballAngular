@@ -1,0 +1,49 @@
+<div id="wrapper">
+  <div class="feed">
+    <div class="feed-item" *ngFor="let card of news; let i=index">
+      <div class="icon-holder"><span>{{users[idx].name.first}} {{users[idx].name.last}}</span>
+        <div class="icon" [ngStyle]="{'background-image': url(users[idx].picture.large)}"></div>
+        <div class="rating">
+          <div class="rating__bar">
+            <label class="rating__star rating__star--1" data-id="{{card.NewsID}}" for="rating-star-1" role="button"
+              aria-label="Uma estrela"></label>
+            <input type="checkbox" id="rating-star-1" class="rating__checkbox" name="rating-star-1" hidden />
+            <label class="rating__star rating__star--2" data-id="{{card.NewsID}}" for="rating-star-2" role="button"
+              aria-label="Uma estrela"></label>
+            <input type="checkbox" id="rating-star-2" class="rating__checkbox" name="rating-star-2" hidden />
+            <label class="rating__star rating__star--3" data-id="{{card.NewsID}}" for="rating-star-3" role="button"
+              aria-label="Uma estrela"></label>
+            <input type="checkbox" id="rating-star-3" class="rating__checkbox" name="rating-star-3" hidden />
+            <label class="rating__star rating__star--4" data-id="{{card.NewsID}}" for="rating-star-4" role="button"
+              aria-label="Uma estrela"></label>
+            <input type="checkbox" id="rating-star-4" class="rating__checkbox" name="rating-star-4" hidden />
+            <label class="rating__star rating__star--5" data-id="{{card.NewsID}}" for="rating-star-5" role="button"
+              aria-label="Uma estrela"></label>
+            <input type="checkbox" id="rating-star-5" class="rating__checkbox" name="rating-star-5" hidden />
+          </div>
+        </div>
+      </div>
+      <div class="text-holder col-3-5">
+        <div class="feed-title">{{card.Title}} </div>
+        <div class="feed-description">{{card.Content}} </div>
+      </div>
+      <!--End of Text Holder-->
+      <div class="post-options-holder">
+        <div class='ui right pointing dropdown'>
+          <div class="tools">
+            <i class="fa fa-ellipsis-v" id="postsettings"></i>
+          </div>
+          <!--End Tools-->
+          <div class='menu'>
+            <div class='item'>C</div>
+            <div class='item'>C++</div>
+            <div class='item'>C#</div>
+            <div class='item'>Java</div>
+            <div class='item'>JavaScript</div>
+          </div>
+        </div>
+      </div>
+      <!--End Post Options Holder -->
+    </div>
+
+  </div>

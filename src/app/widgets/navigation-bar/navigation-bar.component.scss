@@ -1,0 +1,31 @@
+.live {
+  color: red !important;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 10px #a33838, 0 0 10px #b81b1b;
+    color: #f5b8a9;
+  }
+
+  to {
+    text-shadow: 0 0 0px #fff;
+    color: red;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 10px #a33838, 0 0 10px #b81b1b;
+    color: #f5b8a9;
+  }
+
+  to {
+    text-shadow: 0 0 0px #fff;
+    color: red;
+  }
+}

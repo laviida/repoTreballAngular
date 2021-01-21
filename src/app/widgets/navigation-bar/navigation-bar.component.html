@@ -8,30 +8,31 @@
 
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" data-static data-page="home">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']" data-page="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-static data-page="about">About</a>
+          <a class="nav-link" [routerLink]="['/about']" [routerLinkActive]="['active']" data-page="about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-static data-page="contact">Contact</a>
+          <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="['active']"
+            data-page="contact">Contact</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" data-static data-page="teams">Teams</a>
+          <a class="nav-link" data-page="teams">Teams</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-static data-page="rules">Rules</a>
+          <a class="nav-link" data-page="rules">Rules</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-static data-page="news">News</a>
+          <a class="nav-link" [routerLink]="['/news']" [routerLinkActive]="['active']" data-page="news">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-static data-page="bets">Bets</a>
+          <a class="nav-link" data-page="bets">Bets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link live" data-static data-page="live">Live</a>
+          <a class="nav-link live" data-page="live">Live</a>
         </li>
       </ul>
 
@@ -42,7 +43,8 @@
 
       <ul class="navbar-nav">
         <li class="nav-item" data-page="login" id="parentLogin">
-          <a class="nav-link" data-page="login"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login</a>
+          <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']" data-page="login"><i
+              class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login</a>
         </li>
         <li class="nav-item" data-page="register" id="parentRegister"> <a class="nav-link" data-page="register"><i
               class="fas fa-user-plus"></i>&nbsp;&nbsp;Register</a>
