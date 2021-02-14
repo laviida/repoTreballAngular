@@ -1,6 +1,6 @@
 <div class="login-box">
   <h2>Login</h2>
-  <form novalidate [formGroup]="form">
+  <form novalidate [formGroup]="form" (ngSubmit)="login()">
     <div class="user-box">
       <input class="classlogin" type="text" formControlName="username" />
       <label>Username</label>
@@ -9,12 +9,26 @@
       <input class="classlogin" type="password" formControlName="password" />
       <label>Password</label>
     </div>
-    <a id="submit">
+    <div class="remember-box">
+      <input
+        class="classlogin"
+        style="display: inline-block !important"
+        type="checkbox"
+        formControlName="remember"
+      />
+      <label>Remember</label>
+      <div (click)="register()">Register</div>
+    </div>
+
+    <div class="user-box">
+      <p class="errors">{{ errors }}</p>
+    </div>
+    <button appLoginButton id="submit" class="no-styles" type="submit">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Submit
-    </a>
+    </button>
   </form>
 </div>

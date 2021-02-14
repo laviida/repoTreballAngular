@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
+
+  user: User;
   ngOnInit(): void {
+    this.user = { username: "", firstname: "", lastname: "", password: "", remember: false, }
     this.activeLabels();
   }
 
@@ -41,7 +45,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onClick() {
+  submit() {
+    console.log(this.user);
+  }
+
+  login() {
     this.router.navigate(['/login']);
   }
+
 }

@@ -12,7 +12,7 @@ export class NewsComponent implements OnInit {
   constructor() {}
 
   async ngOnInit() {
-    this.news = Array.from(news_json['default']);
+    this.news = Array.from(news_json['default']);//canviar per service
     this.users = [];
 
     var url = 'https://randomuser.me/api/?results=' + this.news.length;

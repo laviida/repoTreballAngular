@@ -1,0 +1,324 @@
+<div *ngIf="player" [attr.data-card-id]="player.PlayerID" class="baseball-card">
+  <article [attr.data-flipper-id]="player.PlayerID" class="flipper">
+    <section class="front">
+      <address class="player-name">{{ player.FantasyDraftName }}</address>
+      <div
+        class="player-photo lazy"
+        [lazyLoad]="
+          player.YahooPlayerID != null
+            ? 'https://s.yimg.com/xe/i/us/sp/v/mlb_cutout/players_l/10012020/' +
+              player.YahooPlayerID.toString() +
+              '.png'
+            : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Placeholder_no_text.svg/1200px-Placeholder_no_text.svg.png'
+        "
+        role="image"
+      ></div>
+      <p class="position">{{ player.Position }}</p>
+      <p class="team">{{ player.Team }}</p>
+      <svg
+        class="team-banner"
+        width="37.157894mm"
+        height="22.345482mm"
+        viewBox="0 0 131.66183 79.176903"
+        id="teambanner"
+      >
+        <g transform="translate(20.245031,15.912448)" style="display: inline">
+          <g id="g4219">
+            <path
+              id="path3352-3"
+              d="m -20.0734,32.05221 8,17 6.00241,0.92417 -1.50241,13.07583 30.09262,-9.44365 41.06468,-9.69713 c 0,0 17.45114,-4.58631 26.85574,-7.11134 16.47986,-4.42466 20.25842,-13.83519 20.38342,-18.21019 1.0625,-2.71875 -0.11677,-30.783301 -0.11677,-30.783301 -0.003,-0.726468 0.0834,-2.6126 -1.41356,-3.46427 l -0.0715,3.2794 c -1.72517,7.64159 -8.32748,14.570481 -22.29466,21.680481 -8.10983,4.12832 -107,22.75 -107,22.75 z"
+              style="
+                fill: #000000;
+                fill-opacity: 1;
+                fill-rule: evenodd;
+                stroke: #000000;
+                stroke-width: 0.30000001;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 4;
+                stroke-dasharray: none;
+                stroke-opacity: 1;
+              "
+            />
+            <path
+              id="path3352"
+              d="m -19.51256,25.19052 8.25,16.75 -3.75,16 c 0,0 30.07129,-8.36569 41.84986,-10.51311 18.2677,-3.33049 50.61126,-9.23206 63.57692,-12.85301 10.37003,-3.51256 18.66941,-9.57106 18.71967,-18.22487 l 0.34283,-28.776968 c -0.75,3.9375 -9.14171,12.153808 -20.73928,14.617958 z"
+              style="
+                fill: #64b7e0;
+                fill-opacity: 1;
+                fill-rule: evenodd;
+                stroke: #000000;
+                stroke-width: 1;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke-miterlimit: 4;
+                stroke-dasharray: none;
+                stroke-opacity: 1;
+              "
+            />
+          </g>
+        </g>
+      </svg>
+      <svg
+        class="position-banner"
+        id="positionBanner"
+        width="69.49556"
+        height="65.326904"
+      >
+        <g id="layer1" transform="translate(-185.6569,-223.70495)">
+          <g id="g4232" transform="translate(50,38)">
+            <g id="g4236" transform="translate(-81,-106)">
+              <path
+                id="path4151-9"
+                d="m 216.76692,352.85095 c -0.82075,-7.07106 4.02479,-29.46399 4.02479,-29.46399 0,0 5.37298,-12.27344 14.04754,-13.81608 l 45.1359,-8.02677 c 0,0 2.09043,-2.89688 5.69975,-5.1466 l -2.93152,18.56621 2.42759,5.54867 -53.53502,14.48708 c -1.625,1.25 -9.91711,3.59208 -11.78959,11.9696 0,0 -0.10004,4.09271 0.3205,10.06278 l -1.93646,-2.1652"
+                style="fill: #000000; fill-rule: evenodd"
+              />
+              <path
+                id="path4151"
+                d="m 216.9069,350.06389 0.0217,-26.79097 c 0,0 -0.94157,-12.16645 12.23214,-15.44643 l 43.75,-10.89286 c 0,0 6.78572,-1.87499 10.08929,-4.55357 l -3.75,14.28571 6.51786,10.71429 -54.92858,15.51786 c 0,0 -8.18445,3.31242 -11.57142,11.96428 l -1.44322,3.68664 -0.81888,2.47806"
+                style="
+                  fill: #f15248;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.5;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 4;
+                  stroke-dasharray: none;
+                  stroke-opacity: 1;
+                "
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </section>
+    <section class="back">
+      <header>
+        <p class="card-number">
+          50
+          <svg id="stitching" width="40" height="11" viewBox="0 0 87 22">
+            <path
+              style="fill: rgba(0, 0, 0, 0.75)"
+              d="m 72.939882,20.915961 c -0.395728,-1.03125 -0.17466,-1.875 0.491264,-1.875 0.665923,0 1.210769,-0.84375 1.210769,-1.875 0,-2.328779 -2.176226,-2.328779 -6.25,0 -4.073774,2.328779 -6.25,2.328779 -6.25,0 0,-1.03125 0.595697,-1.875 1.323771,-1.875 0.728074,0 0.976128,-0.5625 0.551229,-1.25 -1.409021,-2.279845 -6.065519,-1.295684 -9.517526,2.011549 -3.778707,3.620231 -6.93969,3.129108 -4.860854,-0.755233 1.73653,-3.244737 1.593136,-3.756316 -1.052885,-3.756316 -1.268446,0 -3.324378,1.125 -4.568735,2.5 -1.244358,1.375 -3.056944,2.5 -4.027969,2.5 -1.196656,0 -1.509845,-0.805499 -0.972031,-2.5 1.096892,-3.456003 -1.353984,-3.19412 -6.444511,0.688614 l -4.180489,3.188615 0,-3.188615 c 0,-2.00099 -0.698359,-3.188614 -1.875,-3.188614 -2.108854,0 -6.875,4.33286 -6.875,6.25 0,0.6875 -0.84375,1.25 -1.875,1.25 -1.03125,0 -1.875,-0.84375 -1.875,-1.875 0,-2.840046 -4.600359,-2.243176 -6.788451,0.880762 l -1.9302107,2.755763 -3.3743548,-2.51932 c -4.8602615,-3.628709 -5.0587242,-5.492205 -0.584921,-5.492205 4.5248465,0 6.5170405,-2.383866 2.8037074,-3.3549242 -2.967625,-0.776051 -3.6091191,-4.145076 -0.7892615,-4.145076 1.0100794,0 4.0215636,1.138915 6.6921866,2.530922 2.685809,1.399921 5.799374,2.16879 6.967456,1.720555 1.959579,-0.751961 1.96393,-0.973735 0.06036,-3.077154 -3.791251,-4.189287 -0.747381,-5.244738 5.329853,-1.848108 5.732682,3.204058 9.113636,4.010483 9.113636,2.173785 0,-0.55 -0.615251,-1.615251 -1.367225,-2.367225 -0.751974,-0.751974 -1.173849,-2.308333 -0.9375,-3.45857502 0.349919,-1.702953 1.377815,-1.278209 5.534782,2.28706602 4.728004,4.055031 7.970903,5.004441 10.036888,2.938456 0.461619,-0.461619 0.127775,-1.69665 -0.741875,-2.744514 -1.329179,-1.601562 -1.172806,-1.905208 0.981149,-1.905208 1.409282,0 3.627225,1.353793 4.928761,3.008429 1.301536,1.654636 3.732989,3.201511 5.403225,3.4375 2.626844,0.371149 3.005026,-0.03497 2.801465,-3.008429 -0.328224,-4.79442102 2.457546,-4.35967102 4.901284,0.764899 1.102191,2.311319 3.175122,4.5086572 4.606515,4.8829752 2.19585,0.574227 2.602531,0.112874 2.602531,-2.9523982 0,-5.003868 2.048758,-4.549522 4.679616,1.037782 2.721214,5.7791932 6.570384,7.0631892 6.570384,2.1917312 0,-4.0285462 2.929953,-3.6208072 3.533455,0.491723 0.516704,3.521049 -1.493545,5.941997 -7.462535,8.987148 -5.670665,2.892957 -5.619214,2.888747 -6.522953,0.53364 z"
+              id="path4484"
+            />
+          </svg>
+        </p>
+        <div class="flex-grid header-grid">
+          <div class="flex-row">
+            <h2 class="flex-cell text-center width-12 header-player-name">
+              Mookie Betts
+            </h2>
+          </div>
+          <div class="flex-row">
+            <span class="flex-cell width-04 header-player-position text-left"
+              >Outfield</span
+            >
+            <span class="flex-cell width-08 header-player-team text-right"
+              >Boston RedSox</span
+            >
+          </div>
+          <div class="flex-row small-text">
+            <span class="flex-cell width-03"
+              ><strong>Height</strong> : 5'9"</span
+            >
+            <span class="flex-cell width-03"
+              ><strong>Weight</strong> : 180</span
+            >
+            <span class="flex-cell width-03 text-center"
+              ><strong>Bats</strong> : right</span
+            >
+            <span class="flex-cell width-03 text-right"
+              ><strong>Throws</strong> : right</span
+            >
+          </div>
+          <div class="flex-row small-text">
+            <span class="flex-cell width-06 text-left"
+              ><strong>Born</strong> : October 7, 1992</span
+            >
+            <span class="flex-cell width-06 text-right"
+              ><strong>Home</strong> : Nashville, TN.</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <p class="bio">
+        Markus Lynn "Mookie" Betts is a relatively short natural second baseman
+        with a high contact rate and a high level of production when pulling the
+        ball, Betts has been compared to fellow Red Sox player Dustin Pedroia.
+        Betts was drafted by the Red Sox in 2011, and made his MLB debut in the
+        2014 season, sharing time between second base and the outfield. He
+        became the Red Sox starting center fielder in 2014, before moving to
+        right field in 2016.
+      </p>
+      <h3 class="table-title text-center">
+        Major &amp; Minor League Batting Record
+      </h3>
+
+      <table class="player-stats">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Team</th>
+            <th>Lea.</th>
+            <th>G</th>
+            <th>AB</th>
+            <th>R</th>
+            <th>H</th>
+            <th>2B</th>
+            <th>3B</th>
+            <th>HR</th>
+            <th>RBI</th>
+            <th>AVG.</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th colspan="3">Maj. Tot. 5 Yrs</th>
+            <th>644</th>
+            <th>2606</th>
+            <th>478</th>
+            <th>789</th>
+            <th>189</th>
+            <th>21</th>
+            <th>110</th>
+            <th>390</th>
+            <th>.303</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>2011</td>
+            <td>Bos-min</td>
+            <td>RK</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td>.500</td>
+          </tr>
+          <tr>
+            <td>2012</td>
+            <td>Bos-min</td>
+            <td>A-</td>
+            <td>71</td>
+            <td>251</td>
+            <td>34</td>
+            <td>67</td>
+            <td>8</td>
+            <td>1</td>
+            <td>0</td>
+            <td>31</td>
+            <td>.267</td>
+          </tr>
+          <tr>
+            <td>2013</td>
+            <td>Bos-min</td>
+            <td>A,A+,Fal.</td>
+            <td>143</td>
+            <td>251</td>
+            <td>104</td>
+            <td>161</td>
+            <td>39</td>
+            <td>4</td>
+            <td>16</td>
+            <td>70</td>
+            <td>.309</td>
+          </tr>
+          <tr>
+            <td>2014</td>
+            <td>Bos-min</td>
+            <td>AA,AAA</td>
+            <td>99</td>
+            <td>399</td>
+            <td>87</td>
+            <td>138</td>
+            <td>30</td>
+            <td>5</td>
+            <td>11</td>
+            <td>65</td>
+            <td>.346</td>
+          </tr>
+          <tr>
+            <td>2014</td>
+            <td>Boston</td>
+            <td>AL</td>
+            <td>52</td>
+            <td>189</td>
+            <td>34</td>
+            <td>55</td>
+            <td>12</td>
+            <td>1</td>
+            <td>5</td>
+            <td>18</td>
+            <td>.291</td>
+          </tr>
+          <tr>
+            <td>2015</td>
+            <td>Boston</td>
+            <td>AL</td>
+            <td>145</td>
+            <td>597</td>
+            <td>92</td>
+            <td>174</td>
+            <td>42</td>
+            <td>8</td>
+            <td>18</td>
+            <td>77</td>
+            <td>.291</td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td>Boston</td>
+            <td>AL</td>
+            <td>158</td>
+            <td>672</td>
+            <td>122</td>
+            <td>214</td>
+            <td>42</td>
+            <td>5</td>
+            <td>31</td>
+            <td>113</td>
+            <td>.318</td>
+          </tr>
+          <tr>
+            <td>2017</td>
+            <td>Boston</td>
+            <td>AL</td>
+            <td>153</td>
+            <td>628</td>
+            <td>101</td>
+            <td>166</td>
+            <td>46</td>
+            <td>2</td>
+            <td>24</td>
+            <td>102</td>
+            <td>.264</td>
+          </tr>
+          <tr>
+            <td>2018</td>
+            <td>Boston</td>
+            <td>AL</td>
+            <td>136</td>
+            <td>520</td>
+            <td>129</td>
+            <td>180</td>
+            <td>47</td>
+            <td>5</td>
+            <td>32</td>
+            <td>80</td>
+            <td>.346</td>
+          </tr>
+          <p class="printed">&copy; Matt Henley</p>
+        </tbody>
+      </table>
+    </section>
+  </article>
+</div>

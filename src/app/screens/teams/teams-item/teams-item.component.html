@@ -1,0 +1,20 @@
+<div *ngIf="team !== undefined" class="col m-3">
+  <div class="card mx-auto" style="width: 300px">
+    <img
+      class="card-img-top"
+      src="{{ team.WikipediaLogoUrl }}"
+      style="height: 300px"
+      alt="Card image"
+    />
+    <div class="card-body">
+      <h4 class="card-title">{{ team.Name }}</h4>
+      <p class="card-text text-muted">{{ team.City }}</p>
+      <a
+        class="teampage btn btn-primary btn-block text-white"
+        [routerLink]="['/players', team.TeamID]"
+        routerLinkActive="router-link-active"
+        >Team Page</a
+      >
+    </div>
+  </div>
+</div>

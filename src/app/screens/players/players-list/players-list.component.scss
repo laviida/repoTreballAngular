@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:900");
+
+.parentTitle {
+  display: block;
+  margin: 2% auto;
+}
+
+.parentTitle > svg {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 5% auto;
+  font-size: 3vw;
+  padding: 5px;
+  height: 10vw;
+}
+
+.parentTitle > svg > text {
+  margin: 5px;
+  fill: #35322a;
+  filter: url("#money");
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 300%;
+  font-weight: bolder;
+}
+
+.responsive-iframe {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 50vw;
+}
+
+.nav-username {
+  color: lightblue;
+}
+#map {
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+}
+
+.text-justify {
+  text-align: justify;
+}

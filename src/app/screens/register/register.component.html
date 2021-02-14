@@ -3,31 +3,100 @@
     <div id="signup">
       <h1>Sign Up for Free</h1>
 
-      <form id="registerForm">
+      <form id="registerForm" #registerForm="ngForm">
         <div class="top-row">
           <div class="field-wrap">
             <label> First Name<span class="req">*</span> </label>
-            <input name="first_name" type="text" required autocomplete="off" />
+            <input
+              name="firstname"
+              type="text"
+              required
+              autocomplete="off"
+              minlength="5"
+              maxlength="15"
+              [(ngModel)]="user.firstname"
+              [ngClass]="{
+                valid: firstname && firstname.valid,
+                error: firstname.touched && !firstname.valid
+              }"
+              #firstname="ngModel"
+            />
           </div>
 
           <div class="field-wrap">
             <label> Last Name<span class="req">*</span> </label>
-            <input name="last_name" type="text" required autocomplete="off" />
+            <input
+              name="last_name"
+              type="text"
+              required
+              autocomplete="off"
+              [(ngModel)]="user.lastname"
+              [ngClass]="{
+                valid: lastname && lastname.valid,
+                error: lastname.touched && !lastname.valid
+              }"
+              #lastname="ngModel"
+            />
           </div>
         </div>
 
         <div class="field-wrap">
           <label> Email Address<span class="req">*</span> </label>
-          <input name="email" type="email" required autocomplete="off" />
+          <input
+            name="email"
+            type="email"
+            required
+            autocomplete="off"
+            [(ngModel)]="user.username"
+          />
         </div>
 
         <div class="field-wrap">
           <label> Set A Password<span class="req">*</span> </label>
-          <input name="password" type="password" required autocomplete="off" />
+          <input
+            name="password"
+            type="password"
+            required
+            autocomplete="off"
+            [(ngModel)]="user.password"
+          />
+        </div>
+        <div class="field-wrap">
+          <span class="req login" (click)="login()">Login</span>
+        </div>
+        <div class="field-error" [hidden]="user.firstname">
+          <label appErrorStar> First name is required</label>
         </div>
 
-        <div class="field-error"></div>
-        <button type="submit" (click)="onClick()" class="button button-block">
+        <div class="field-error" [hidden]="firstname.valid">
+          <label appErrorStar>
+            First name must be at least 5 characters length</label
+          >
+        </div>
+
+        <div class="field-error" [hidden]="user.lastname">
+          <label appErrorStar> Last name is required</label>
+        </div>
+
+        <div class="field-error" [hidden]="lastname.valid">
+          <label appErrorStar>
+            Last name must be at least 5 characters length</label
+          >
+        </div>
+
+        <div class="field-error" [hidden]="user.username">
+          <label appErrorStar> Email is required</label>
+        </div>
+
+        <div class="field-error" [hidden]="user.password">
+          <label appErrorStar> Password is required</label>
+        </div>
+        <button
+          [disabled]="registerForm.invalid"
+          type="submit"
+          (click)="submit()"
+          class="button button-block"
+        >
           Sign Up
         </button>
       </form>
