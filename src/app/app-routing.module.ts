@@ -9,6 +9,7 @@ import { NewsComponent } from './screens/news/news.component';
 import { TeamsListComponent } from './screens/teams/teams-list/teams-list.component';
 import { PlayersListComponent } from './screens/players/players-list/players-list.component';
 import { AuthGuard } from './guards/auth.guard';
+import { TournamentsComponent } from './screens/tournaments/tournaments.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,7 +19,16 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
   { path: 'news', component: NewsComponent, canActivate: [AuthGuard] },
   { path: 'teams', component: TeamsListComponent, canActivate: [AuthGuard] },
-  { path: 'players/:id', component: PlayersListComponent, canActivate: [AuthGuard] },
+  {
+    path: 'players/:id',
+    component: PlayersListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'tournaments',
+    component: TournamentsComponent,
+    canActivate: [AuthGuard],
+  },
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/error', pathMatch: 'full' },
@@ -28,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

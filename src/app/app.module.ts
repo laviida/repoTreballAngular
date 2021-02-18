@@ -24,6 +24,7 @@ import { MarkersService } from './services/markers.service';
 import { LoginButtonDirective } from './directives/login-button.directive';
 import { UsernamePipe } from './pipes/username.pipe';
 import { ErrorStarDirective } from './directives/error-star.directive';
+import { TournamentsComponent } from './screens/tournaments/tournaments.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ErrorStarDirective } from './directives/error-star.directive';
     LoginButtonDirective,
     UsernamePipe,
     ErrorStarDirective,
+    TournamentsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,
     HttpClientModule, LazyLoadImageModule, LeafletModule, FormsModule],

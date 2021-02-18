@@ -22,6 +22,7 @@
     "@asymmetrik/ngx-leaflet": "^8.1.0",
     "@types/jquery": "^3.5.5",
     "bootstrap": "^4.6.0",
+    "conversational-form": "^1.0.2",
     "jquery": "^3.5.1",
     "leaflet": "^1.7.1",
     "leaflet-geosearch": "^3.2.1",
