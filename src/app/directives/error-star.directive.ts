@@ -15,6 +15,6 @@ export class ErrorStarDirective {
 
   @HostListener("mouseleave")
   errorStarLeave() {
-    this.e.nativeElement.innerHTML = this.e.nativeElement.innerHTML.replace("*", "");
+    this.e.nativeElement.innerHTML = this.e.nativeElement.innerHTML.replace("* ", "");
   }
 }
