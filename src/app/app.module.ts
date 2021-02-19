@@ -25,6 +25,7 @@ import { LoginButtonDirective } from './directives/login-button.directive';
 import { UsernamePipe } from './pipes/username.pipe';
 import { ErrorStarDirective } from './directives/error-star.directive';
 import { TournamentsComponent } from './screens/tournaments/tournaments.component';
+import { ConversationalFormComponent } from './screens/tournaments/conversational-form/conversational-form.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { TournamentsComponent } from './screens/tournaments/tournaments.componen
     UsernamePipe,
     ErrorStarDirective,
     TournamentsComponent,
+    ConversationalFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,
     HttpClientModule, LazyLoadImageModule, LeafletModule, FormsModule],

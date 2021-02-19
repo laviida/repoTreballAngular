@@ -1,1 +1,27 @@
-<p>tournaments works!</p>
+<div class="tile" id="tile-1">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <div class="slider"></div>
+    <li class="nav-item">
+      <a class="nav-link active" id="create-tab" data-toggle="tab" href="#create" role="tab" aria-controls="create"
+        aria-selected="true"><i class="fas fa-edit"></i> Create Tournament</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="classification-tab" data-toggle="tab" href="#classification" role="tab"
+        aria-controls="classification" aria-selected="false"><i class="fas fa-trophy"></i> Classification</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    <div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
+      <app-conversational-form></app-conversational-form>
+
+    </div>
+    <div class="tab-pane fade" id="classification" role="tabpanel" aria-labelledby="classification-tab"></div>
+
+  </div>
+
+
+</div>
