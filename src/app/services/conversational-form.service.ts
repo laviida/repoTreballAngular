@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { CfTag } from '../models/cf-tag';
 import { TournamentMode } from '../enums/tournament-mode.enum';
 import { TournamentType } from '../enums/tournament-type.enum';
+import { Team } from '../models/team';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConversationalFormService {
-  constructor() {}
+  constructor() { }
 
   getTitleTag(): CfTag {
     return {
@@ -100,4 +101,28 @@ export class ConversationalFormService {
     });
     return arr;
   }
+
+  getTeamsTag(teams: Array<Team>): Array<CfTag> {
+    let children = [];
+    children = teams.map((x) => {
+      let child = {
+        tag: 'option',
+        value: x.TeamID,
+        name: 'tournament_type',
+        'cf-label': x.Name,
+        'cf-image': x.WikipediaLogoUrl
+      }
+      return child;
+    });
+    return [{
+      tag: 'select',
+      name: 'teams',
+      'cf-questions': 'Elige los equipos que participarán en el torneo',
+      'cf-input-placeholder': 'Filtrar equipos ...',
+      multiple: true,
+      children: children,
+    }]
+
+  }
+
 }

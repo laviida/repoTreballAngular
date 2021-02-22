@@ -8,4 +8,5 @@ export interface CfTag {
   'cf-input-placeholder': string;
   value?: string;
   type?: string;
+  'cf-image'?: string;
 }

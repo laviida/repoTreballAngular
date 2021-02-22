@@ -10,6 +10,7 @@ import { TeamsListComponent } from './screens/teams/teams-list/teams-list.compon
 import { PlayersListComponent } from './screens/players/players-list/players-list.component';
 import { AuthGuard } from './guards/auth.guard';
 import { TournamentsComponent } from './screens/tournaments/tournaments.component';
+import { ConversationalFormComponent } from './screens/tournaments/conversational-form/conversational-form.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
   { path: 'news', component: NewsComponent, canActivate: [AuthGuard] },
   { path: 'teams', component: TeamsListComponent, canActivate: [AuthGuard] },
+  { path: 'create-tournament', component: ConversationalFormComponent, canActivate: [AuthGuard] },
+
   {
     path: 'players/:id',
     component: PlayersListComponent,
@@ -38,4 +41,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
