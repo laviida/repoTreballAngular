@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Match } from 'src/app/models/match';
 
 @Component({
   selector: 'app-bracket',
   templateUrl: './bracket.component.html',
-  styleUrls: ['./bracket.component.scss']
+  styleUrls: ['./bracket.component.scss'],
 })
 export class BracketComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Input() bracket: Match;
+  ngOnInit(): void {}
 }

@@ -11,24 +11,26 @@
         </tr>
       </thead>
       <tbody class="tournament-bracket__content">
-        <tr [ngClass]="{'tournament-bracket__winner': bracket.home == bracket.winner}" class="tournament-bracket__team">
+        <tr [ngClass]="{'tournament-bracket__winner': bracket.home.json_team.TeamID == bracket.winner.json_team.TeamID}"
+          class="tournament-bracket__team">
           <td class="tournament-bracket__country">
-            <abbr class="tournament-bracket__code" title="${bracket.home.data.Name}">{{bracket.home.data.Key}}</abbr>
-            <span class="tournament-bracket__flag flag-icon"
-              style="background-image:url('${bracket.home.data.WikipediaLogoUrl}');"></span>
+            <abbr class="tournament-bracket__code"
+              title="{{bracket.home.json_team.Name}}">{{bracket.home.json_team.Key}}</abbr>
+            <span class="tournament-bracket__flag flag-icon" style="background-image:url('');"></span>
           </td>
           <td class="tournament-bracket__score">
-            <span class="tournament-bracket__number">${bracket.score.score_home}</span>
+            <span class="tournament-bracket__number">{{bracket.score.home_score}}</span>
           </td>
         </tr>
-        <tr [ngClass]="{'tournament-bracket__winner': bracket.away == bracket.winner}" class="tournament-bracket__team">
+        <tr [ngClass]="{'tournament-bracket__winner': bracket.away.json_team.TeamID == bracket.winner.json_team.TeamID}"
+          class="tournament-bracket__team">
           <td class="tournament-bracket__country">
-            <abbr class="tournament-bracket__code" title="${bracket.away.data.Name}">{{bracket.away.data.Key}}</abbr>
-            <span class="tournament-bracket__flag flag-icon"
-              style="background-image:url('bracket.away.data.WikipediaLogoUrl');"></span>
+            <abbr class="tournament-bracket__code"
+              title="{{bracket.away.json_team.Name}}">{{bracket.away.json_team.Key}}</abbr>
+            <span class="tournament-bracket__flag flag-icon" style="background-image:url('');"></span>
           </td>
           <td class="tournament-bracket__score">
-            <span class="tournament-bracket__number">{{bracket.score.score_away}}</span>
+            <span class="tournament-bracket__number">{{bracket.score.away_score}}</span>
           </td>
         </tr>
       </tbody>

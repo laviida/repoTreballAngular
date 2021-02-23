@@ -30,6 +30,7 @@ import { TableComponent } from './screens/tournaments/league/table/table.compone
 import { TableItemComponent } from './screens/tournaments/league/table-item/table-item.component';
 import { FinalsComponent } from './screens/tournaments/finals/finals.component';
 import { BracketComponent } from './screens/tournaments/finals/bracket/bracket.component';
+import { RoundComponent } from './screens/tournaments/finals/round/round.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { BracketComponent } from './screens/tournaments/finals/bracket/bracket.c
     TableItemComponent,
     FinalsComponent,
     BracketComponent,
+    RoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,
     HttpClientModule, LazyLoadImageModule, LeafletModule, FormsModule],

@@ -30,6 +30,7 @@ export class TournamentService {
     this.json_teams = allTeams;
     this.tournament = _tournament;
     this.tournament.brackets = [];
+    this.tournament.brackets_finals = [];
     this.ids_teams = ids_teams;
     this.getMaxRounds();
   }
@@ -158,7 +159,6 @@ export class TournamentService {
         this.tournament.brackets_finals.push(...this.tournament.brackets);
         break;
       case 2:
-        this.tournament.brackets[1].round = TournamentRounds.BRONZE_FINAL;
         this.tournament.brackets[0].round = TournamentRounds.GOLD_FINAL;
         this.tournament.brackets_finals.push(...this.tournament.brackets);
         break;
@@ -287,5 +287,12 @@ export class TournamentService {
     team.fgoals = isNaN(team.fgoals) ? 0 : team.fgoals;
     team.agoals = isNaN(team.agoals) ? 0 : team.agoals;
     return team;
+  }
+
+  public filterBracketsByRound(
+    round: TournamentRounds,
+    matches: Array<Match>
+  ): Array<Match> {
+    return matches.filter((m) => m.round == round);
   }
 }

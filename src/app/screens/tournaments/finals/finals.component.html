@@ -1,1 +1,21 @@
-<p>finals works!</p>
+<div class="container my-5">
+  <div class="tournament-bracket tournament-bracket--rounded">
+
+    <div app-round *ngIf="roundOf16" [round]=roundOf16 [brackets]=roundOf16Array
+      class="tournament-bracket__round tournament-bracket__round--round16finals">
+    </div>
+    <div app-round *ngIf="quarterFinals" [round]=quarterFinals [brackets]=quarterFinalsArray
+      class="tournament-bracket__round tournament-bracket__round--quarterfinals"></div>
+
+    <div app-round *ngIf="semiFinals" [round]=semiFinals [brackets]=semiFinalsArray
+      class="tournament-bracket__round tournament-bracket__round--semifinals"></div>
+
+    <div app-round *ngIf="bronze" [round]=bronze [brackets]=bronzeArray
+      class="tournament-bracket__round tournament-bracket__round--bronze"></div>
+
+    <div app-round *ngIf="gold" [round]=gold [brackets]=goldArray
+      class="tournament-bracket__round tournament-bracket__round--gold"></div>
+
+
+  </div>
+</div>
