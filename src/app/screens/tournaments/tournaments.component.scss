@@ -1,0 +1,53 @@
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: double;
+}
+
+button {
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+button:after,
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #000;
+  transition: transform 0.2s;
+}
+
+button:after {
+  transform: translate(3px, 3px);
+}
+
+button:before {
+  transform: translate(-3px, -3px);
+}
+
+button:hover:after,
+button:hover:before {
+  transform: translate(0);
+}
+
+.row {
+  display: flex;
+  background-color: antiquewhite;
+  padding: 40px;
+  justify-content: space-evenly;
+}
+
+#wrapper {
+  height: 100vh;
+  background-color: antiquewhite;
+}

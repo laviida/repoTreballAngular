@@ -1,0 +1,15 @@
+<app-navigation-bar></app-navigation-bar>
+<div id="wrapper">
+  <div class="row">
+    <button (click)="show()">VER</button>
+    <button (click)="create()">CREAR</button>
+  </div>
+  <div *ngIf="created && _show">
+    <h2>{{tournament.name}}</h2>
+    <div *ngIf="mode==LEAGUE">
+      <app-table></app-table>
+    </div>
+    <div *ngIf="mode==FINALS">
+    </div>
+  </div>
+</div>

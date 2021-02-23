@@ -20,8 +20,11 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
   { path: 'news', component: NewsComponent, canActivate: [AuthGuard] },
   { path: 'teams', component: TeamsListComponent, canActivate: [AuthGuard] },
-  { path: 'create-tournament', component: ConversationalFormComponent, canActivate: [AuthGuard] },
-
+  {
+    path: 'create-tournament',
+    component: ConversationalFormComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'players/:id',
     component: PlayersListComponent,
@@ -41,4 +44,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

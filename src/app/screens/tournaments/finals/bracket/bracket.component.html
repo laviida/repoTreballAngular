@@ -1,0 +1,37 @@
+<li class="tournament-bracket__item">
+  <div class="tournament-bracket__match" tabindex="0">
+    <table class="tournament-bracket__table">
+      <caption class="tournament-bracket__caption">
+        <time datetime="1998-02-18">18 February 1998</time>
+      </caption>
+      <thead class="sr-only">
+        <tr>
+          <th>Country</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody class="tournament-bracket__content">
+        <tr [ngClass]="{'tournament-bracket__winner': bracket.home == bracket.winner}" class="tournament-bracket__team">
+          <td class="tournament-bracket__country">
+            <abbr class="tournament-bracket__code" title="${bracket.home.data.Name}">{{bracket.home.data.Key}}</abbr>
+            <span class="tournament-bracket__flag flag-icon"
+              style="background-image:url('${bracket.home.data.WikipediaLogoUrl}');"></span>
+          </td>
+          <td class="tournament-bracket__score">
+            <span class="tournament-bracket__number">${bracket.score.score_home}</span>
+          </td>
+        </tr>
+        <tr [ngClass]="{'tournament-bracket__winner': bracket.away == bracket.winner}" class="tournament-bracket__team">
+          <td class="tournament-bracket__country">
+            <abbr class="tournament-bracket__code" title="${bracket.away.data.Name}">{{bracket.away.data.Key}}</abbr>
+            <span class="tournament-bracket__flag flag-icon"
+              style="background-image:url('bracket.away.data.WikipediaLogoUrl');"></span>
+          </td>
+          <td class="tournament-bracket__score">
+            <span class="tournament-bracket__number">{{bracket.score.score_away}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>

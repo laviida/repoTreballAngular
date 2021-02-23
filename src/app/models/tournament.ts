@@ -9,4 +9,5 @@ export interface Tournament {
   num_teams: number;
   max_rounds?: number;
   brackets?: Array<Match>;
+  brackets_finals?: Array<Match>;
 }

@@ -26,6 +26,10 @@ import { UsernamePipe } from './pipes/username.pipe';
 import { ErrorStarDirective } from './directives/error-star.directive';
 import { TournamentsComponent } from './screens/tournaments/tournaments.component';
 import { ConversationalFormComponent } from './screens/tournaments/conversational-form/conversational-form.component';
+import { TableComponent } from './screens/tournaments/league/table/table.component';
+import { TableItemComponent } from './screens/tournaments/league/table-item/table-item.component';
+import { FinalsComponent } from './screens/tournaments/finals/finals.component';
+import { BracketComponent } from './screens/tournaments/finals/bracket/bracket.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,10 @@ import { ConversationalFormComponent } from './screens/tournaments/conversationa
     ErrorStarDirective,
     TournamentsComponent,
     ConversationalFormComponent,
+    TableComponent,
+    TableItemComponent,
+    FinalsComponent,
+    BracketComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,
     HttpClientModule, LazyLoadImageModule, LeafletModule, FormsModule],

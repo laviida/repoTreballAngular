@@ -9,5 +9,4 @@ export interface TeamTournament {
   fgoals?: number;
   agoals?: number;
   position?: number;
-  setResult?: Function;
 }
