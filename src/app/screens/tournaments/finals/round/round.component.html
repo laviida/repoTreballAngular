@@ -1,4 +1,5 @@
   <h3 class="tournament-bracket__round-title">{{title}}</h3>
   <ul class="tournament-bracket__list">
-    <app-bracket *ngFor="let bracket of brackets" [bracket]=bracket></app-bracket>
+    <li app-bracket *ngFor="let bracket of brackets" [bracket]=bracket class="tournament-bracket__item">
+    </li>
   </ul>

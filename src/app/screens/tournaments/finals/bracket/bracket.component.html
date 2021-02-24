@@ -1,39 +1,63 @@
-<li class="tournament-bracket__item">
-  <div class="tournament-bracket__match" tabindex="0">
-    <table class="tournament-bracket__table">
-      <caption class="tournament-bracket__caption">
-        <time datetime="1998-02-18">18 February 1998</time>
-      </caption>
-      <thead class="sr-only">
-        <tr>
-          <th>Country</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody class="tournament-bracket__content">
-        <tr [ngClass]="{'tournament-bracket__winner': bracket.home.json_team.TeamID == bracket.winner.json_team.TeamID}"
-          class="tournament-bracket__team">
-          <td class="tournament-bracket__country">
-            <abbr class="tournament-bracket__code"
-              title="{{bracket.home.json_team.Name}}">{{bracket.home.json_team.Key}}</abbr>
-            <span class="tournament-bracket__flag flag-icon" style="background-image:url('');"></span>
-          </td>
-          <td class="tournament-bracket__score">
-            <span class="tournament-bracket__number">{{bracket.score.home_score}}</span>
-          </td>
-        </tr>
-        <tr [ngClass]="{'tournament-bracket__winner': bracket.away.json_team.TeamID == bracket.winner.json_team.TeamID}"
-          class="tournament-bracket__team">
-          <td class="tournament-bracket__country">
-            <abbr class="tournament-bracket__code"
-              title="{{bracket.away.json_team.Name}}">{{bracket.away.json_team.Key}}</abbr>
-            <span class="tournament-bracket__flag flag-icon" style="background-image:url('');"></span>
-          </td>
-          <td class="tournament-bracket__score">
-            <span class="tournament-bracket__number">{{bracket.score.away_score}}</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
+<div class="tournament-bracket__match" tabindex="0">
+  <table class="tournament-bracket__table">
+    <caption class="tournament-bracket__caption">
+      <time datetime="1998-02-18">18 February 1998</time>
+    </caption>
+    <thead class="sr-only">
+      <tr>
+        <th>Country</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody class="tournament-bracket__content">
+      <tr
+        [ngClass]="{
+          'tournament-bracket__winner':
+            bracket.home.json_team.TeamID == bracket.winner.json_team.TeamID
+        }"
+        class="tournament-bracket__team"
+      >
+        <td class="tournament-bracket__country">
+          <abbr
+            class="tournament-bracket__code"
+            title="{{ bracket.home.json_team.Name }}"
+            >{{ bracket.home.json_team.Key }}</abbr
+          >
+          <span
+            class="tournament-bracket__flag flag-icon"
+            style="background-image: url('')"
+          ></span>
+        </td>
+        <td class="tournament-bracket__score">
+          <span class="tournament-bracket__number">{{
+            bracket.score.home_score
+          }}</span>
+        </td>
+      </tr>
+      <tr
+        [ngClass]="{
+          'tournament-bracket__winner':
+            bracket.away.json_team.TeamID == bracket.winner.json_team.TeamID
+        }"
+        class="tournament-bracket__team"
+      >
+        <td class="tournament-bracket__country">
+          <abbr
+            class="tournament-bracket__code"
+            title="{{ bracket.away.json_team.Name }}"
+            >{{ bracket.away.json_team.Key }}</abbr
+          >
+          <span
+            class="tournament-bracket__flag flag-icon"
+            style="background-image: url('')"
+          ></span>
+        </td>
+        <td class="tournament-bracket__score">
+          <span class="tournament-bracket__number">{{
+            bracket.score.away_score
+          }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
