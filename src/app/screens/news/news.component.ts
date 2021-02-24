@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as news_json from '../../../assets/news.json';
+import { NewsUser } from 'src/app/models/news-user';
+import { News } from 'src/app/models/news';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-news',
@@ -7,17 +9,19 @@ import * as news_json from '../../../assets/news.json';
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent implements OnInit {
-  users: Array<any>;
-  news: Array<any>;
-  constructor() {}
+  users: Array<NewsUser>;
+  news: Array<News>;
+  constructor(private serviceNews: NewsService) {}
 
-  async ngOnInit() {
-    this.news = Array.from(news_json['default']);//canviar per service
-    this.users = [];
-
-    var url = 'https://randomuser.me/api/?results=' + this.news.length;
-    var response = await fetch(url);
-    this.users = response.json()['results'];
-    console.log(this.users);
+  ngOnInit() {
+    this.serviceNews.getAllNews().subscribe((n) => {
+      this.news = n;
+      this.serviceNews.getAllUsers(this.news.length).subscribe((u) => {
+        this.users = u['results'];
+        this.news.forEach(
+          (_new: News, i: number) => (_new.user = u['results'][i])
+        );
+      });
+    });
   }
 }

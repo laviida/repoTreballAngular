@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as news from '../../../assets/news.json';
+import { NewsService } from 'src/app/services/news.service';
+import { News } from 'src/app/models/news';
 
 @Component({
   selector: 'app-news-bar',
@@ -7,10 +8,12 @@ import * as news from '../../../assets/news.json';
   styleUrls: ['./news-bar.component.scss'],
 })
 export class NewsBarComponent implements OnInit {
-  constructor() {}
-  news: Array<any>;
+  constructor(private serviceNews: NewsService) {}
+  news: Array<News>;
 
   ngOnInit(): void {
-    this.news = Array.from(news['default']).slice(0, 10);
+    this.serviceNews
+      .getAllNews()
+      .subscribe((n) => (this.news = n.slice(0, 10)));
   }
 }
