@@ -1,0 +1,11 @@
+Tics Simarro: http://2daw02.ticsimarro.org/
+GitHub: https://github.com/laviida/repoTreballAngular.git
+
+Credencials:
+    username: sergi@gmail.com
+    password: 12qwER3456
+
+Formulari reactiu: Pàgina Login
+Formulari: Pàgina Registre
+
+Pàgines importants: Tournaments i Teams
