@@ -1,7 +1,7 @@
 <div class="container my-5">
   <div class="tournament-bracket tournament-bracket--rounded">
 
-    <div app-round *ngIf="roundOf16" [round]=roundOf16 [brackets]=roundOf16Array
+    <div app-round *ngIf="null != roundOf16" [round]=roundOf16 [brackets]=roundOf16Array
       class="tournament-bracket__round tournament-bracket__round--round16finals">
     </div>
     <div app-round *ngIf="quarterFinals" [round]=quarterFinals [brackets]=quarterFinalsArray

@@ -15,7 +15,6 @@ export class RoundComponent implements OnInit {
 
   title: string;
   ngOnInit(): void {
-    console.log(this.brackets);
     switch (this.round) {
       case TournamentRounds.ROUND_OF_16:
         this.title = 'Round of 16';

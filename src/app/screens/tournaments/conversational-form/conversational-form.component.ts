@@ -91,7 +91,6 @@ export class ConversationalFormComponent implements OnInit {
           this.serviceCf.getTypeTag(),
         ],
       });
-      console.log(this.cf);
     });
   }
 }

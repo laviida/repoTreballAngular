@@ -26,7 +26,6 @@ export class FinalsComponent implements OnInit {
 
   ngOnInit(): void {
     this.matches = this.t_service.getResultsFinals();
-    console.log(this.matches);
 
     this.roundOf16 = this.matches.find(
       (m) => m.round == TournamentRounds.ROUND_OF_16
@@ -51,7 +50,7 @@ export class FinalsComponent implements OnInit {
     this.gold = this.matches.find((m) => m.round == TournamentRounds.GOLD_FINAL)
       ? TournamentRounds.GOLD_FINAL
       : null;
-    this.matches;
+
     this.roundOf16Array = this.t_service.filterBracketsByRound(
       TournamentRounds.ROUND_OF_16,
       this.matches
@@ -72,8 +71,5 @@ export class FinalsComponent implements OnInit {
       TournamentRounds.GOLD_FINAL,
       this.matches
     );
-    console.log(this.bronzeArray);
-
-    console.log(this.goldArray);
   }
 }
